@@ -1,11 +1,7 @@
+use crate::utils::Input;
 use std::iter::zip;
 
-fn parse(input: &str) -> Vec<i32> {
-    input
-        .lines()
-        .filter_map(|s| s.parse().ok())
-        .collect()
-}
+fn parse(input: &str) -> Vec<i32> { input.lines().values() }
 
 fn solve(xs: Vec<i32>, shift: usize) -> usize {
     zip(&xs[0..], &xs[shift..])

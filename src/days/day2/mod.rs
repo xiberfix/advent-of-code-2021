@@ -1,3 +1,4 @@
+use crate::utils::Input;
 use std::str::FromStr;
 
 enum Command {
@@ -21,12 +22,7 @@ impl FromStr for Command {
     }
 }
 
-fn parse(input: &str) -> Vec<Command> {
-    input
-        .lines()
-        .filter_map(|s| s.parse().ok())
-        .collect()
-}
+fn parse(input: &str) -> Vec<Command> { input.lines().values() }
 
 
 #[derive(Default)]

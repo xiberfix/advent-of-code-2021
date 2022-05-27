@@ -1,3 +1,4 @@
+use crate::utils::Input;
 use ndarray::{Array2};
 
 type Number = i32;
@@ -15,16 +16,10 @@ struct Game {
 impl Game {
     fn parse(input: &str) -> (Vec<Board>, Vec<Number>) {
         let parts: Vec<_> = input.split("\n\n").collect();
-        let numbers = parts[0]
-            .split(',')
-            .filter_map(|s| s.parse().ok())
-            .collect();
+        let numbers = parts[0].split(',').values();
         let boards = parts[1..].iter()
             .filter_map(|s| {
-                let cells = s
-                    .split_whitespace()
-                    .filter_map(|s| s.parse().ok())
-                    .collect();
+                let cells = s.split_whitespace().values();
                 Board::from_shape_vec((5, 5), cells).ok()
             })
             .collect();
