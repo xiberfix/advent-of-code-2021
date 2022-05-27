@@ -5,3 +5,4 @@ authors = ["Michael Khryashchev <me@xiberfix.dev>"]
 edition = "2021"
 
 [dependencies]
+ndarray = "0.15.4"
